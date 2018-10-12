@@ -6,12 +6,18 @@
   </head>
   <body>
     <input type="text" name="url">
-    <input type="submit" value="Submit URL">
+    <input type="submit" value="Submit URL"><br>
+    <p class="errors"></p>
     <script type="text/javascript">
       $(document).ready(function(){
         $('input[type="submit"]').click(function(e){
           e.preventDefault();
-          alert($('input[type="submit"]').val());
+          var url = $('input[type="submit"]').val();
+          
+          if (url.length ==){
+                $('.errors').html('Uh-Oh!! You did not enter a valid URL! Please enter a valid URL to continue!');
+                return false;
+              }
         });
       });
     </script>
